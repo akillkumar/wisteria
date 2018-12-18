@@ -143,32 +143,63 @@ gulp.task('clean', function rmRf() {
   });
 });
 
-// Build production files
-gulp.task('build', gulp.series('compile-toolkit', 'styles', 'scripts', 'images'));
 
-// if the scss variables are changed, recompile scss
-gulp.task('watch', function watch() {
+// Build production files
+gulp.task('build', gulp.series('clean', 'compile-toolkit', 'styles', 'scripts', 'images', 'license'));
+
+
+// Function to watch the scss variables
+function watch() {
   gulp.watch(Paths.dev.scss, gulp.series('compile-toolkit'));
-  gulp.watch([Paths.dev.css, Paths.dev.js], injectPaths(Paths.dev));
-});
+}
+
+//  SERVERS  //
 
 // development server (watches the .css and .js files in `dev/assets`)
 gulp.task('serve:dev', function devServer () {
   browserSync.init({
-    watch: true,
-    server: {
-      baseDir: "./dev/"
+    port: 5566,
+    ui: {
+      port: 5567
     },
-    files: ['./dev/assets/css/*.css', './dev/assets/js/**/*.js'],
+    server: {
+      baseDir: "./dev",
+      index: "index.html"
+    },
+    watch: true,
+    files: [Paths.dev.css, Paths.dev.js, Paths.dev.img],
     browser: "google chrome"
   });
+  watch();
 });
 
+// serve from `prod`
+// but first build production files
+gulp.task('serve:prod', gulp.series('build'), function devServer () {
+  browserSync.init({
+    port: 8080,
+    ui: {
+      port: 8090
+    },
+    server: {
+      baseDir: "./prod"
+    },
+    watch: true,
+    files: [Paths.prod.css, Paths.prod.js, Paths.prod.img],
+    browser: "google chrome"
+  });
+  watch();
+});
 
-gulp.task('default', gulp.parallel('serve:dev'));
+// default task is running dev-server
+gulp.task('default', gulp.series('compile-toolkit', 'serve:dev'));
 
 
-
+// Misc - copy license to production
+gulp.task('license', function copy() {
+  return gulp.src('LICENSE')
+  .pipe(gulp.dest(Paths.prod.here));
+});
 
 
 
