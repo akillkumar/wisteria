@@ -1,3 +1,12 @@
+/**
+ * 
+ * 19 December, 2019
+ *
+ * Deepraj Pandey
+ *
+ * Gulpfile for Project Wisteria
+ */
+
 'use strict';
 var browserSync = require('browser-sync').create();
 var del = require('del')
@@ -87,7 +96,7 @@ gulp.task('styles', function prepStyles(cb) {
         console.log(`${deets.name}: ${deets.stats.minifiedSize}`);
       }),
       sourcemaps.write('.'),
-      gulp.dest(Paths.prod.css).on('end', function injectNewP() {
+      gulp.dest(Paths.prod.css).on('end', function injectNewSt() {
         return injectPaths(Paths.prod);
       })
     ],
@@ -107,7 +116,7 @@ gulp.task('scripts', function prepScripts(cb) {
       uglify(),
       concat('main.min.js'),
       sourcemaps.write('.'),
-      gulp.dest(Paths.prod.js).on('end', function injectNewP() {
+      gulp.dest(Paths.prod.js).on('end', function injectNewSc() {
         return injectPaths(Paths.prod)
       })
     ],
@@ -143,9 +152,14 @@ gulp.task('clean', function rmRf() {
   });
 });
 
+// Misc - copy license to production
+gulp.task('license', function copy() {
+  return gulp.src('LICENSE')
+  .pipe(gulp.dest(Paths.prod.here));
+});
 
 // Build production files
-gulp.task('build', gulp.series('clean', 'compile-toolkit', 'styles', 'scripts', 'images', 'license'));
+gulp.task('build', gulp.series('clean', 'compile-toolkit', 'styles', 'images', 'scripts', 'license'));
 
 
 // Function to watch the scss variables
@@ -175,7 +189,7 @@ gulp.task('serve:dev', function devServer () {
 
 // serve from `prod`
 // but first build production files
-gulp.task('serve:prod', gulp.series('build'), function devServer () {
+gulp.task('serve:prod', function devServer () {
   browserSync.init({
     port: 8080,
     ui: {
@@ -193,25 +207,3 @@ gulp.task('serve:prod', gulp.series('build'), function devServer () {
 
 // default task is running dev-server
 gulp.task('default', gulp.series('compile-toolkit', 'serve:dev'));
-
-
-// Misc - copy license to production
-gulp.task('license', function copy() {
-  return gulp.src('LICENSE')
-  .pipe(gulp.dest(Paths.prod.here));
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
