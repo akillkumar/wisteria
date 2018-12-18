@@ -8,6 +8,8 @@ var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
+var cache = require('gulp-cache');
+var imagemin = require('gulp-imagemin');
 var inject = require('gulp-inject');
 var pump = require('pump');
 
@@ -113,6 +115,27 @@ gulp.task('scripts', function prepScripts(cb) {
   );
 });
 
+// Optimises images
+gulp.task('images', function imgOptim(cb) {
+  pump([
+      gulp.src(Paths.dev.img+'/*.{svg,png,jpg,gif}'),
+      cache(imagemin([
+        imagemin.gifsicle({interlaced: true}),
+        imagemin.jpegtran({progressive: true}),
+        imagemin.optipng({optimizationLevel: 5}),
+        imagemin.svgo({
+          plugins: [
+            {removeViewBox: true},
+            {cleanupIDs: false}
+          ]
+        })
+      ])),
+      gulp.dest(Paths.prod.img)
+    ],
+    cb
+  );
+});
+
 // Clears production directory
 gulp.task('clean', function rmRf() {
   return del('./prod').then(function log(paths) {
@@ -120,7 +143,8 @@ gulp.task('clean', function rmRf() {
   });
 });
 
-//gulp.task('build:prod', gulp.series('compile-toolkit', 'styles', 'images', 'scripts'));
+// Build production files
+gulp.task('build', gulp.series('compile-toolkit', 'styles', 'scripts', 'images'));
 
 // if the scss variables are changed, recompile scss
 gulp.task('watch', function watch() {
