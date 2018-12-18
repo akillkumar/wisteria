@@ -1,14 +1,15 @@
+'use strict';
+var browserSync = require('browser-sync').create();
+var del = require('del')
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
-var browserSync = require('browser-sync').create();
-var inject = require('gulp-inject');
 var uglify = require('gulp-uglify');
+var inject = require('gulp-inject');
 var pump = require('pump');
-
 
 const reload = browserSync.reload;
 
@@ -65,12 +66,13 @@ gulp.task('compile-toolkit', function genCss(cb) {
   );
 });
 
+// Copies the html files from dev to prod
 function copyHtml() {
   gulp.src(Paths.dev.here+'/*.html')
   .pipe(gulp.dest(Paths.prod.here));
 }
 
-// concats, minifies and copies the resultant css file into production
+// Concats, minifies and copies the resultant css file into production
 gulp.task('styles', function prepStyles(cb) {
   copyHtml();
   pump([
@@ -91,7 +93,7 @@ gulp.task('styles', function prepStyles(cb) {
   );
 });
 
-// copies js files to production
+// Concats, minifies, and copies js files to production
 gulp.task('scripts', function prepScripts(cb) {
   copyHtml();
   pump([
@@ -109,6 +111,13 @@ gulp.task('scripts', function prepScripts(cb) {
     ],
     cb
   );
+});
+
+// Clears production directory
+gulp.task('clean', function rmRf() {
+  return del('./prod').then(function log(paths) {
+    console.log('Cleared production directory.');
+  });
 });
 
 //gulp.task('build:prod', gulp.series('compile-toolkit', 'styles', 'images', 'scripts'));
