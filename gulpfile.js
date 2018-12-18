@@ -55,7 +55,8 @@ gulp.task('compile-toolkit', function genCss(cb) {
         onError: console.error.bind(console, 'Sass error:')
       }),
       autoprefixer(),
-      gulp.dest(Paths.dev.css).on('end', function callNext() {
+      // injectPaths is called on end to make sure sass compiles before injecting new file
+      gulp.dest(Paths.dev.css).on('end', function injectNewP() {
         // injection into dev folder
         return injectPaths(Paths.dev);
       })
@@ -70,28 +71,44 @@ function copyHtml() {
 }
 
 // concats, minifies and copies the resultant css file into production
-gulp.task('styles', function prepStyles() {
+gulp.task('styles', function prepStyles(cb) {
   copyHtml();
-  return gulp.src(Paths.dev.css+'/*.css')
-  .pipe(sourcemaps.init())
-  .pipe(autoprefixer())
-  .pipe(concat('main.min.css'))
-  .pipe(cleanCSS({debug: true}, function minify(deets) {
-    console.log(`${deets.name}: ${deets.stats.originalSize}`);
-    console.log(`${deets.name}: ${deets.stats.minifiedSize}`);
-  }))
-  .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(Paths.prod.css))
-  .on('end', function callNext() {
-    return injectPaths(Paths.prod);
-  });
+  pump([
+      gulp.src(Paths.dev.css+'/*.css'),
+      sourcemaps.init(),
+      autoprefixer(),
+      concat('main.min.css'),
+      cleanCSS({debug: true}, function minify(deets) {
+        console.log(`${deets.name}: ${deets.stats.originalSize}`);
+        console.log(`${deets.name}: ${deets.stats.minifiedSize}`);
+      }),
+      sourcemaps.write('.'),
+      gulp.dest(Paths.prod.css).on('end', function injectNewP() {
+        return injectPaths(Paths.prod);
+      })
+    ],
+    cb
+  );
 });
 
 // copies js files to production
-gulp.task('scripts', function prepScripts() {
+gulp.task('scripts', function prepScripts(cb) {
   copyHtml();
-  return gulp.src(Paths.dev.js+'/*.js')
-  .pipe(gulp.dest())
+  pump([
+      gulp.src(Paths.dev.js+'/*.js'),
+      sourcemaps.init(),
+      // Concatenate all js files
+      concat('main.js'),
+      // Minify
+      uglify(),
+      concat('main.min.js'),
+      sourcemaps.write('.'),
+      gulp.dest(Paths.prod.js).on('end', function injectNewP() {
+        return injectPaths(Paths.prod)
+      })
+    ],
+    cb
+  );
 });
 
 //gulp.task('build:prod', gulp.series('compile-toolkit', 'styles', 'images', 'scripts'));
