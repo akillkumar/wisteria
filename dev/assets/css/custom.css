@@ -3,15 +3,15 @@
         background-color: #ff9601
     }
 
-    30% {
+    25% {
         background-color: #f93d6d
     }
 
-    60% {
+    50% {
         background-color: #8d00bb
     }
 
-    90% {
+    75% {
         background-color: #265bed
     }
 
@@ -21,10 +21,10 @@
 }
 
 body {
-    -webkit-animation: bgcolor 20s infinite;
-    animation: bgcolor 10s infinite;
-    -webkit-animation-direction: alternate;
-    animation-direction: alternate;
+    -webkit-animation: bgcolor 10s infinite;
+    animation: bgcolor 15s infinite;
+    -webkit-animation-direction: normal;
+    animation-direction: normal;
 }
 
 h1 {
