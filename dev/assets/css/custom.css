@@ -26,20 +26,24 @@
         background-color: #ff9601
     }
 
-    25% {
+    12.5% {
         background-color: #f93d6d
     }
 
-    50% {
+    37.5% {
         background-color: #8d00bb
     }
 
-    75% {
+    62.5% {
         background-color: #265bed
     }
 
-    100% {
+    87.5% {
         background-color: #02d8a6
+    }
+    
+    100% {
+        background-color: #ff9601
     }
 }
 
