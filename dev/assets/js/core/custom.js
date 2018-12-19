@@ -739,7 +739,7 @@ var SEPARATION = 100,
         var PI2 = Math.PI * 2;
         var material = new THREE.ParticleCanvasMaterial({
  
-            color: 0xa3a2ba,
+            color: 0xe1e1e0,
             program: function(context) {
  
                 context.beginPath();
