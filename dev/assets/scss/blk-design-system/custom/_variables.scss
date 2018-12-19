@@ -376,8 +376,19 @@ $general-transition-time:     300ms             !default;
 
 // Fonts
 
-$font-family-base:            'Poppins', sans-serif !default;
-$font-family-alt:             'Poppins', sans-serif !default;
+$font-path: "../fonts/" !default;
+
+$font-faces: (
+ 'Gotham': (
+    "GothamLight" light,
+    "GothamMedium" medium,
+    "GothamBold" bold,
+    "GothamBlack" black
+  )
+) !default;
+
+$font-family-base:            'Gotham', sans-serif !default;
+$font-family-alt:             'Gotham', sans-serif !default;
 
 $font-size-dash:              .875rem !default;
 
@@ -394,10 +405,10 @@ $h4-font-size:                $font-size-base * 1.2142857 !default;
 $h5-font-size:                $font-size-base * 0.9285714 !default;
 $h6-font-size:                $font-size-base * 0.8571428 !default;
 
-$font-weight-light:           300 !default;
-$font-weight-normal:          400 !default;
-$font-weight-bold:            600 !default;
-$font-weight-extra-bold:      700 !default;
+$font-weight-light:           light !default;
+$font-weight-normal:          medium !default;
+$font-weight-bold:            bold !default;
+$font-weight-extra-bold:      black !default;
 
 $font-paragraph:               1rem          !default;
 

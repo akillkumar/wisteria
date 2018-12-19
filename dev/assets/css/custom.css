@@ -1,3 +1,26 @@
+@font-face {
+    font-family: Gotham;
+    src: url('../fonts/GothamMedium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gotham;
+    font-weight: bold;
+    src: url('../fonts/GothamBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gotham;
+    font-weight: extra_bold;
+    src: url('../fonts/GothamBlack.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gotham;
+    font-weight: light;
+    src: url('../fonts/GothamLight.otf') format('opentype');
+}
+
 @keyframes bgcolor {
     0% {
         background-color: #ff9601

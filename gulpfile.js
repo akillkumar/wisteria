@@ -29,6 +29,7 @@ var Paths = {
     here: './dev',
     js: './dev/assets/js/core',
     img: './dev/assets/img',
+    fonts: './dev/assets/fonts',
     scss: './dev/assets/scss/**/**/*.scss',
     scss_toolkit: './dev/assets/scss/blk-design-system.scss',
     css: './dev/assets/css'
@@ -37,7 +38,8 @@ var Paths = {
     here: './prod',
     css: './prod/assets/css',
     js: './prod/assets/js',
-    img: './prod/assets/img'
+    img: './prod/assets/img',
+    fonts: './prod/assets/fonts'
   }
 }
 
@@ -145,6 +147,18 @@ gulp.task('images', function imgOptim(cb) {
   );
 });
 
+// Misc - copy license to production
+gulp.task('license', function copy() {
+  return gulp.src('LICENSE')
+  .pipe(gulp.dest(Paths.prod.here));
+});
+
+// Copy the fonts
+gulp.task('fonts', function copyFonts() {
+  return gulp.src(Paths.dev.fonts+'/*')
+  .pipe(gulp.dest(Paths.prod.fonts));
+});
+
 // Clears production directory
 gulp.task('clean', function rmRf() {
   return del('./prod').then(function log(paths) {
@@ -152,14 +166,8 @@ gulp.task('clean', function rmRf() {
   });
 });
 
-// Misc - copy license to production
-gulp.task('license', function copy() {
-  return gulp.src('LICENSE')
-  .pipe(gulp.dest(Paths.prod.here));
-});
-
 // Build production files
-gulp.task('build', gulp.series('clean', 'compile-toolkit', 'styles', 'images', 'scripts', 'license'));
+gulp.task('build', gulp.series('clean', 'compile-toolkit', 'fonts', 'styles', 'images', 'scripts', 'license'));
 
 
 // Function to watch the scss variables
