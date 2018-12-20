@@ -200,7 +200,7 @@ gulp.task('serve:prod', function devServer () {
   browserSync.init({
     port: 8080,
     ui: {
-      port: 8090
+      port: 8081
     },
     server: {
       baseDir: "./prod"
