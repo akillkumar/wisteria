@@ -189,8 +189,7 @@ gulp.task('serve:dev', function devServer () {
       index: "index.html"
     },
     watch: true,
-    files: [Paths.dev.css, Paths.dev.js, Paths.dev.img],
-    browser: "google chrome"
+    files: [Paths.dev.css, Paths.dev.js, Paths.dev.img]
   });
   watch();
 });
@@ -207,8 +206,7 @@ gulp.task('serve:prod', function devServer () {
       baseDir: "./prod"
     },
     watch: true,
-    files: [Paths.prod.css, Paths.prod.js, Paths.prod.img],
-    browser: "google chrome"
+    files: [Paths.prod.css, Paths.prod.js, Paths.prod.img]
   });
   watch();
 });
