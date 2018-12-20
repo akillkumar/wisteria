@@ -129,7 +129,7 @@ gulp.task('scripts', function prepScripts(cb) {
 // Optimises images
 gulp.task('images', function imgOptim(cb) {
   pump([
-      gulp.src(Paths.dev.img+'/*.{svg,png,jpg,gif}'),
+      gulp.src(Paths.dev.img+'/*.{svg,png,jpg,gif,ico}'),
       cache(imagemin([
         imagemin.gifsicle({interlaced: true}),
         imagemin.jpegtran({progressive: true}),
