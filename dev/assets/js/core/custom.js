@@ -708,7 +708,7 @@ fragmentShader:"uniform vec3 color;\nuniform sampler2D map;\nuniform float opaci
 
 var SEPARATION = 100,
         AMOUNTX = 100,
-        AMOUNTY = 70;
+        AMOUNTY = 55;
  
     var container;
     var camera, scene, renderer;
