@@ -1,0 +1,551 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* FONTS */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+@font-face {
+	font-family: Bebas;
+	src: url(../fonts/BebasNeue.otf);
+}
+
+@font-face {
+	font-family: Chalkduster;
+	src: url(../fonts/Chalkduster.ttf);
+}
+
+/* END FONTS */
+
+/* ==========================================================================
+	 2.4  Pre Loader
+	 ========================================================================== */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 9999999999;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  top: 45%;
+  position: relative;
+  margin: 0px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #FDD422;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+/* ========================================================================== 
+  -2.5 Scroll To Up 
+   ========================================================================== */
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 18px;
+  right: 15px;
+}
+
+.back-to-top i {
+  display: block;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #1D2A63;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+
+/* TEXT */
+
+h1 {
+	font-family: Bebas, sans-serif;
+	color: #000;
+	text-align: left;
+	letter-spacing: 2px;
+	font-size: 25px;
+}
+
+h2, h3, h4, h5, p {
+	font-family: Montserrat, sans-serif;
+	color: #000;
+	text-align: left;
+	font-size: 15px;
+}
+
+/* MODAL */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: relative; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 270px;
+    top: -14px;
+    width: 380px; /* Full width */
+    height: 200px; /* Full height */
+    overflow-y: scroll; /* Enable scroll if needed */
+	-webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* Modal Content/Box */
+.modal-content {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+    width: 95%; /* Could be more or less, depending on screen size */
+	border: medium #000000;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+/* The Close Button */
+.close {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close1 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close2 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close3 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close3:hover,
+.close3:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close4 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close4:hover,
+.close4:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close5 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close5:hover,
+.close5:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close6 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close6:hover,
+.close6:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close7 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close7:hover,
+.close7:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close8 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close8:hover,
+.close8:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close9 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close9:hover,
+.close9:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close10 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close10:hover,
+.close10:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close11 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close11:hover,
+.close11:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close12 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close12:hover,
+.close12:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close13 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close13:hover,
+.close13:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close14 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close14:hover,
+.close14:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close15 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close15:hover,
+.close15:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close16 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close16:hover,
+.close16:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close17 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close17:hover,
+.close17:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close18 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close18:hover,
+.close18:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close19 {
+    color: #000;
+	float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close19:hover,
+.close19:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* PENCILS */
+
+.pencil {
+	
+	position: relative;
+	width:80%;
+	top:0;
+	left:0;
+	z-index: 1;
+}
+
+.pencil img {
+	width: 50%;
+	margin-left: 205px;
+}
+
+.pencil:hover {
+	margin-left: 130px;
+	-webkit-transition: margin 0.5s ease-in;
+    -moz-transition: margin 0.5s ease-in;
+    -o-transition: margin 0.5s ease-in;
+}
+
+.button {
+	
+	font-family: Chalkduster, sans-serif;
+	font-size: 19px;
+	margin-left: -400px;
+	background-color: transparent;
+	border-color: transparent;
+	vertical-align: top;
+	padding-top: 9px;
+}
+
+/* END PENCILS*/
+
+/* SIDEBAR */
+
+.sidebar {
+	
+	position: fixed;
+	background-color: #FDD422;
+	height: 100%;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 25%;
+	
+}
+
+.sidebar p {
+	
+	margin-top: 450px;
+	margin-left: 30px;
+	font-size: 200px;
+	font-family: Bebas, sans-serif;
+	color: #fff;
+	transform: rotate(270deg);
+	
+}
+
+/* END SIDEBAR */
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #FDD422;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000;
+    display: block;
+	font-family: Bebas, sans-serif;
+}
+
+.sidenav a:hover {
+    color: #fff;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.feather {
+	
+	position:fixed;
+	width: 100%;
+	bottom: 0;
+	
+}

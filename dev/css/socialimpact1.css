@@ -1,0 +1,406 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* FONTS */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+@font-face {
+	font-family: Bebas;
+	src: url(../fonts/BebasNeue.otf);
+}
+
+@font-face {
+	font-family: Chalkduster;
+	src: url(../fonts/Chalkduster.ttf);
+}
+
+/* END FONTS */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url(../img/socialimpact.png);
+  background-size: cover;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 768px){
+	body {
+		background-image: url(../img/socialimpact.png);
+		background-size: contain;
+	}
+}
+
+h1 {
+	font-family: Bebas, sans-serif;
+	color: #000;
+	text-align: left;
+	letter-spacing: 2px;
+	font-size: 25px;
+}
+
+h2, h3, h4, h5, p {
+	font-family: Montserrat, sans-serif;
+	color: #000;
+	text-align: left;
+	font-size: 15px;
+}
+
+.head {
+	
+	display: block;
+	background-color: transparent;
+	position: relative;
+	width: 100%;
+	text-align: right;
+	font-family: Bebas, sans-serif;
+	font-size: 90px;
+	color: #fff;
+	padding-top: 50px;
+	padding-right: 20px;
+	
+}
+
+
+/* ==========================================================================
+	 2.4  Pre Loader
+	 ========================================================================== */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 9999999999;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  top: 45%;
+  position: relative;
+  margin: 0px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #FDD422;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+/* ========================================================================== 
+  -2.5 Scroll To Up 
+   ========================================================================== */
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 18px;
+  right: 15px;
+}
+
+.back-to-top i {
+  display: block;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #1D2A63;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+/* CRANE */
+
+.crane {
+	
+	position: relative;
+	float: right;
+	margin-top: -10px;
+	
+}
+
+/* END CRANE */
+
+/* SCROLL */
+
+.scroll {
+	
+	position: absolute;
+	width: 40%;
+	height: 700px;
+	background-color: rgba(255,255,255,0.6);
+	float: left;
+	margin-right: 40px;
+	margin-left: 40px;
+	margin-top: 30px;
+	overflow-y: scroll;
+	padding: 10px;
+	z-index:2147483607;
+	
+}
+
+hr {
+	align: center;
+	noshade: noshade;
+	border-width: 1px;
+	border-color: #000;
+}
+
+/* END SCROLL */
+
+/* TOP BAR */
+
+.topnav {
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: transparent;
+    overflow-x: hidden;
+    padding-top: 5px;
+}
+
+.topnav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+	float: right;
+	text-align: center;
+    color: #fff;
+    display: block;
+	font-family: Bebas, sans-serif;
+}
+
+.topnav a:hover {
+    color: #fff;
+}
+
+@media screen and (max-height: 450px) {
+  .topnav {padding-top: 15px;}
+  .topnav a {font-size: 18px;}
+}
+
+.feather {
+	
+	position:fixed;
+	float: right;
+	right: 0;
+	width: 10%;
+	
+}
+
+/* END BAR */
+
+/* LINKS */
+
+    /************** FLAGS UPDATES TAB **************/
+/* tutorial by deanlirium|tumblr (clarence.tk) */
+   
+    #flags {
+        position:fixed;
+        top:-10px;      
+        right:720px;          /* distance from the left of the page - adjust as you wish! */
+        text-align:center;
+        text-transform:uppercase;   /* the text is in all caps - delete this line and it won't be */
+        color:#8C8C8C;      /* change text color: use sites like http://www.colorpicker.com/ or the tumblr thing, copy the code it gives you and paste it! remember the #! */
+        z-index:2147483607;
+        font-family:Montserrat, sans-serif;}
+       
+/* okay real talk - this updates tab is currently to the top left of your page - if you want to move it to right, just change every 'left' into 'right' and 'right' into 'left'! and I mean every. single. one. Such as the left:100px; above will become right:100px; there are also a bunch of 'margin-left's here below, so change them to margin-right. look for left and right stuff and switch.
+On the contrary, if you want to move it to the bottom of the page, switch every 'top' with 'bottom' and vice versa. That's really it! c: */
+   
+    #flag1 {
+        border:solid 20px #FA6164;    /* flag color */
+        border-bottom:solid 20px transparent;  /* IMPORTANT! -- to make the flag thicker increase the border and border-right value; it looks better if they both have the same number! */
+        padding-top:20px;
+        width:0px;        
+        height:30px;      /* increase or decrease to change the lenght of the CLOSED flag */
+        position:absolute;
+		font-size:18px;                  /* adjust font size */
+        letter-spacing:1px;
+        -moz-transition:all 0.7s ease-out;
+-webkit-transition:all 0.7s ease-out;
+-o-transition:all 0.7s ease-out;}
+ 
+        #flag1:hover {
+            height:60px;}    /* lenght of the OPEN flag */
+       
+        #upd1 {
+        position:absolute;
+        width:110px;
+        height:100px;       /* adjust to fit the text if you write a lot! */
+        padding:10px;
+        padding-top:110px;  /* adjust this if you've changed the length of the closed flag */
+        top:-170px;    /* IMPORTANT! keep this number equal to the sum of the padding-top, padding and height values!!!! */
+        margin-left:-67px;     /* keep this number equal to the 'border' value for the flag */
+        opacity:0;
+        overflow:hidden;
+        -moz-transition:all 0.7s ease-out;
+		-webkit-transition:all 0.7s ease-out;
+		-o-transition:all 0.7s ease-out;}
+ 
+        #flag1:hover #upd1{
+            top:0px;
+            opacity:1;}
+ 
+/* following is the coding for the other flags - same as above! */
+ 
+   #flag2 {
+        border:solid 20px #C73967;
+        margin-left:80px;
+        position:absolute;
+        border-bottom:solid 20px transparent;
+        padding-top:20px;
+        width:0px;
+        height:30px;
+	   font-size:18px;                  /* adjust font size */
+        letter-spacing:1px;
+    -moz-transition:all 0.7s ease-out;
+-webkit-transition:all 0.7s ease-out;
+-o-transition:all 0.7s ease-out;}
+       
+        #flag2:hover {
+            height:60px;}
+       
+        #upd2 {
+        position:absolute;
+        width:90px;
+        padding:10px;
+        padding-top:110px;
+        height:100px;       /* adjust to fit the text if you write a lot! */
+        top:-170px;    /* IMPORTANT! keep this number equal to the sum of the padding-top, padding and height values!!!! */
+        overflow:hidden;
+        margin-left:-59px;
+        opacity:0;
+    -moz-transition:all 0.7s ease-out;
+-webkit-transition:all 0.7s ease-out;
+-o-transition:all 0.7s ease-out;}
+       
+        #flag2:hover #upd2{
+            top:0px;
+            opacity:1;}
+ 
+/*if you want more flags, just copy the part of the code below and change the numbers - then increase the margin-left value for the #flag(number) adding 20px each new flag! copy from here: */
+ 
+   #flag3 {
+        border:solid 20px #1D2A63;
+        position:absolute;
+        margin-left:160px;
+        border-bottom:solid 20px transparent;
+        padding-top:20px;
+        height:30px;
+        width:0px;
+	   font-size:18px;                  /* adjust font size */
+        letter-spacing:1px;
+    -moz-transition:all 0.7s ease-out;
+-webkit-transition:all 0.7s ease-out;
+-o-transition:all 0.7s ease-out;}
+ 
+        #flag3:hover {
+            height:60px;}
+       
+        #upd3 {
+        position:absolute;
+        width:150px;
+        padding:10px;
+        padding-top:110px;
+        height:100px;       /* adjust to fit the text if you write a lot! */
+        top:-170px;    /* IMPORTANT! keep this number equal to the sum of the padding-top, padding and height values!!!! */
+        overflow:hidden;
+        margin-left:-85px;
+        opacity:0;
+    -moz-transition:all 0.7s ease-out;
+-webkit-transition:all 0.7s ease-out;
+-o-transition:all 0.7s ease-out;}
+       
+        #flag3:hover #upd3{
+            top:0px;
+            opacity:1;}
+#flag4 {
+        border:solid 20px #28A39A;
+        position:absolute;
+        margin-left:240px;
+        border-bottom:solid 20px transparent;
+        padding-top:20px;
+        height:30px;
+        width:0px;
+	   font-size:18px;                  /* adjust font size */
+        letter-spacing:1px;
+    -moz-transition:all 0.7s ease-out;
+-webkit-transition:all 0.7s ease-out;
+-o-transition:all 0.7s ease-out;}
+ 
+        #flag4:hover {
+            height:60px;}
+       
+        #upd4 {
+        position:absolute;
+        width:100px;
+        padding:10px;
+        padding-top:110px;
+        height:100px;       /* adjust to fit the text if you write a lot! */
+        top:-170px;    /* IMPORTANT! keep this number equal to the sum of the padding-top, padding and height values!!!! */
+        overflow:hidden;
+        margin-left:-63px;
+        opacity:0;
+    -moz-transition:all 0.7s ease-out;
+-webkit-transition:all 0.7s ease-out;
+-o-transition:all 0.7s ease-out;}
+       
+        #flag4:hover #upd4{
+            top:0px;
+            opacity:1;}
+ 
+/* to here */
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #FDD422;
+}
+ 
+/* END LINKS */

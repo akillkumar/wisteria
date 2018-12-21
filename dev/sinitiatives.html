@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/socialimpact1.css">
+	<meta name="description" content="Presenting the second edition of Ashoka University's inter-collegiate cultural festival, Banjaara 2.0! "/>
+
+	<title>Social Impact Initiatives | Banjaara 2.0</title>
+	<link rel="icon" href="img/logo.png" type="image/png">
+	
+	<style>
+	
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #1D2A63;
+    background-color: #1D2A63;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 50%;
+	padding: 10px;
+    transition: 0.3s;
+    font-size: 30px;
+	font-family: Bebas;
+	color: #DDDDDD;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #28A39A;
+	color: #000;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #28A39A;
+	color: #000;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+	overflow-y: scroll;
+}
+		
+.tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+	overflow-y: scroll;
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+	
+	</style>
+	
+</head>
+
+<body>
+
+<!-- Cranes -->
+    
+    <div class="crane">
+    	
+    	<img src="img/crane1.png">
+    	
+    </div>
+    
+    <!-- End Cranes -->
+    
+    
+    
+    <div class="head" style="float: right;">
+    	
+    	Social Impact Initiatives
+    	
+	</div>
+    
+    <!-- Scroll -->
+    
+    <div class="scroll">
+    
+	<div class="tab">
+  		<button class="tablinks" onclick="openTab(event, 'Sus')" id="defaultOpen">Sustainability</button>
+  		<button class="tablinks" onclick="openTab(event, 'Haat')">Haat</button>
+	</div>
+
+	<div id="Sus" class="tabcontent">
+   		
+   		<h1>Sustainability at Banjaara</h1>
+    	
+    	<p>In order for Banjaara to have a minimal environmental footprint, we are trying to reduce our solid waste generation as well as being more proactive about proper segregation. </p> 
+    	<p>Our Social Impact team is checking all materials used by all departments to make sure that waste generated is minimal, and supplying them with sustainable alternatives when required. Our goal for this festival is to make the festival-day decor from recycled items along with using biodegradable and recyclable cutlery for all the Haat food stalls. </p>
+    	<p>On the road to Banjaara, a new 4-bin waste segregation system was initiated by our Social Impact team. It’s pilot will run in on campus January and hopefully continue even after the festival. Our team will also be conducting awareness drives with the Environment Ministry (part of the Student Government) about proper segregation processes with students, faculty, administration and staff. During the fest, proper signage will indicate correct disposal methods for guests and we hope you will cooperate with us to ensure our efforts don’t go to waste (pun intended!).  </p>
+    	
+    	<hr>
+    	
+    	<h1>Sustainability Stories</h1>
+    	
+    	<p>We have devised a social media campaign to raise awareness of ways in which students, professors and staff can follow sustainable practices on campuses across India. Have you adopted any sustainable practices? Do you make art out of the contents of your dustbin? Do you carry around your own mug or take a bucket bath? Do you use environment friendly sanitary products? Tell us your story, and inspire others through your actions! All you need to do is fill in <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBTxx_95TDvB3pKt7Y2JZie9IXo6Wp4vjrLPMj9rwer04I4Q/viewform?usp=sf_link" style="text-decoration: underline; color:#C73967;">this</a> short form and add a picture of you and your favourite sustainable activity (we understand if you’re camera shy, you don’t have to make an appearance). You and your #sustainabilitystory will be featured here, on our website!</p>
+    	
+	</div>
+
+	<div id="Haat" class="tabcontent">
+  		<h1>Banjaara Haat</h1>
+    	
+    	<p>Various NGOs will be part of the Haat.  Organisations like <i>Lakshay Badte Kadam</i> who specialise in cloth items such as bags and wallets, <i>Karigari</i> that sells Kashmiri handicrafts and <i>Mool</i> who  make environmentally friendly jewellery. We will also have a pop-up Zine stall by Bombay Underground along with second-hand bookstores from Daryaganj! </p>
+    	<p>Food in the Haat will include cuisines by organizations <i>Ilham</i> and <i>Macquul</i>, which are affiliated with the UNHCR run by Afghani and Somalian refugees living in Delhi. The popular Red Cart Biryani from Sonipat will also be carting around campus, so do keep an eye out for them too! </p>
+	</div>  
+    	
+    </div>
+    
+    <div class="topnav">
+    	
+    	<div class="feather">
+    	
+    		<a href="index.html"><img src="img/logovibe.png" style="width: 50%;"></a>
+    		
+    	</div>
+    	
+    	<a href="sievents.html" style="padding-top: 30px; padding-right: 130px;">Social Impact Events</a>
+    	    	<a href="sifaq.html" style="padding-top: 30px;">Social Impact FAQ</a>
+    	<a href="http://my.banjaara.in" style="padding-top: 30px;">Register</a>
+    	
+    </div>
+	
+	<div id="loader">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div> 
+
+
+</body>
+
+<script src="js/jquery-min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.mixitup.js"></script>
+    <script src="js/nivo-lightbox.js"></script>
+    <script src="js/owl.carousel.js"></script>    
+    <script src="js/jquery.stellar.min.js"></script>    
+    <script src="js/jquery.nav.js"></script>    
+    <script src="js/scrolling-nav.js"></script>    
+    <script src="js/jquery.easing.min.js"></script>    
+    <script src="js/smoothscroll.js"></script>    
+    <script src="js/jquery.slicknav.js"></script>     
+    <script src="js/wow.js"></script>   
+    <script src="js/jquery.vide.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>    
+    <script src="js/jquery.magnific-popup.min.js"></script>    
+    <script src="js/waypoints.min.js"></script>    
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>   
+    <script src="js/main.js"></script>
+    <script src="js/popup.js"></script>
+    
+    <script>
+		function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+</html>

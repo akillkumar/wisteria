@@ -1,0 +1,236 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* FONTS */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+@font-face {
+	font-family: Bebas;
+	src: url(../fonts/BebasNeue.otf);
+}
+
+@font-face {
+	font-family: Chalkduster;
+	src: url(../fonts/Chalkduster.ttf);
+}
+
+/* END FONTS */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url(../img/socialimpact.png);
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+h1 {
+	font-family: Bebas, sans-serif;
+	color: #000;
+	text-align: left;
+	letter-spacing: 2px;
+	font-size: 25px;
+}
+
+h2, h3, h4, h5, p {
+	font-family: Montserrat, sans-serif;
+	color: #000;
+	text-align: left;
+	font-size: 15px;
+}
+
+.head {
+	
+	display: block;
+	background-color: transparent;
+	position: relative;
+	width: 90%;
+	text-align: left;
+	font-family: Bebas, sans-serif;
+	font-size: 90px;
+	color: #fff;
+	padding-top: 50px;
+	padding-left: 20px;
+	
+}
+
+
+/* ==========================================================================
+	 2.4  Pre Loader
+	 ========================================================================== */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 9999999999;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  top: 45%;
+  position: relative;
+  margin: 0px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #FDD422;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+/* ========================================================================== 
+  -2.5 Scroll To Up 
+   ========================================================================== */
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 18px;
+  right: 15px;
+}
+
+.back-to-top i {
+  display: block;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #1D2A63;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+/* CRANE */
+
+.crane {
+	
+	position: relative;
+	margin-top: -10px;
+	
+}
+
+/* END CRANE */
+
+/* SCROLL */
+
+.scroll {
+	
+	position: relative;
+	width: 40%;
+	height: 700px;
+	background-color: rgba(255,255,255,0.6);
+	float: right;
+	margin-top: -695px;
+	margin-right: 40px;
+	overflow-y: scroll;
+	padding: 10px;
+	z-index:2147483607;
+	
+}
+
+hr {
+	align: center;
+	noshade: noshade;
+	border-width: 1px;
+	border-color: #000;
+}
+
+/* END SCROLL */
+
+/* TOP BAR */
+
+.topnav {
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: transparent;
+    overflow-x: hidden;
+    padding-top: 5px;
+}
+
+.topnav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+	float: left;
+	text-align: center;
+    color: #fff;
+    display: block;
+	font-family: Bebas, sans-serif;
+}
+
+.topnav a:hover {
+    color: #fff;
+}
+
+@media screen and (max-height: 450px) {
+  .topnav {padding-top: 15px;}
+  .topnav a {font-size: 18px;}
+}
+
+.feather {
+	
+	position:fixed;
+	width: 10%;
+	
+}
+
+/* END BAR */
+
+/* LINKS */
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #FDD422;
+}
+ 
+/* END LINKS */
+
+
