@@ -1,0 +1,37 @@
+{
+  "name": "wisteria",
+  "version": "1.0.0",
+  "description": "![alt text](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/blk-design-system/opt_blk_thumbnail.jpg \"Blk• Design System\")",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-inject": "^5.0.2",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "pump": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Banjaara Tech Team",
+  "license": "CC-BY-NC-4.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Banjaara-Ashoka/wisteria.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Banjaara-Ashoka/wisteria/issues"
+  },
+  "homepage": "https://github.com/Banjaara-Ashoka/wisteria#readme"
+}
