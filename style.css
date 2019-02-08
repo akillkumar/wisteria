@@ -807,8 +807,10 @@ img {
 
 .browse-by-catagories {
   position: relative;
+  text-align: center;
   z-index: 1; }
   .browse-by-catagories a {
+    margin: auto;
     display: inline-block;
     background-color: #f4f4f4;
     border: 2px solid transparent;
